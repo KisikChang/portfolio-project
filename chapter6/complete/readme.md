@@ -59,4 +59,3 @@ with httpx.Client(base_url=self.swc_base_url) as client:
 *출시 예정*
 
 SWC API를 위한 Python SDK는 추후 제공될 예정입니다. 지속적으로 업데이트되는 정보를 확인해 주세요.
-![image](https://github.com/user-attachments/assets/ed3ab29b-0a34-41f4-9918-85e53d98a0ee)
