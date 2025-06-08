@@ -1,19 +1,19 @@
-# Dockerfile for Chapter 6
-# Start with the slim parent image
-FROM python:3.10-slim
+# 6장용 Dockerfile
+# Python 3.10-slim 이미지로 시작
+FROM python:3.10-slim  
 
-# set the Docker working directory
-WORKDIR /code
+# Docker 작업 디렉터리 설정 
+WORKDIR /code  
 
-# copy from the build context directory to the Docker working directory 
-COPY requirements.txt /code/
+# 빌드 컨텍스트 디렉터리에서 Docker 작업 디렉터리로 복사 
+COPY requirements.txt /code/  
 
-# Install the Python libraries listed in the requirements file in the Docker working directory
-RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
+# requirements 파일에 나열된 Python 라이브러리 설치 
+RUN pip3 install --no-cache-dir --upgrade -r requirements.txt  
 
-# Copy code files and database from the build context directory to the Docker working directory
-COPY *.py /code/
+# 코드 파일과 데이터베이스를 빌드 컨텍스트 디렉터리에서 복사 
+COPY *.py /code/  
 COPY *.db /code/
 
-# Launch the Uvicorn webserver and run the application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+# Uvicorn 웹 서버를 시작하고 애플리케이션을 실행
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]  
