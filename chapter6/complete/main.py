@@ -54,7 +54,7 @@ def get_db():
     tags=["analytics"],
 )
 async def root():
-    return {"message": "API 상태 확인 성공"}
+    return {"message": "API 상태 확인: 성공"}
 
 
 @app.get(
