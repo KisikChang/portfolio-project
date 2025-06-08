@@ -1,70 +1,62 @@
-# Sports World Central(SWC) Fantasy Football API Documentation
+# SportsWorldCentral (SWC) 판타지 풋볼 API 문서
 
-Thanks for using the Sports World Central API. This is your one-stop-shop for accessing data from our fantasy football website, www.sportsworldcentral.com.
+SportsWorldCentral API를 이용해 주셔서 감사합니다. 여기는 저희 판타지 풋볼 웹사이트인 www.sportsworldcentral.com의 데이터에 접근할 수 있는 원스톱 상점입니다.
 
+## 목차
 
-## Table of Contents
+- [공개 API](#공개-api)
+- [시작하기](#시작하기)
+  - [분석](#분석)
+  - [선수](#선수)
+  - [성적](#성적)
+  - [멤버십](#멤버십)
+- [서비스 약관](#서비스-약관)
+- [예시 코드](#예시-코드)
+- [소프트웨어 개발 키트 (SDK)](#소프트웨어-개발-키트-sdk)
 
-- [Public API](#public-api)
-- [Getting Started](#getting-started)
-  - [Analytics](#analytics)
-  - [Player](#player)
-  - [Scoring](#scoring)
-  - [Membership](#membership)
-- [Terms of Service](#terms-of-service)
-- [Example Code](#example-code)
-- [Software Development Kit (SDK)](#software-development-kit-sdk)
+## 공개 API
+*출시 예정*
 
-## Public API
+저희 애플리케이션을 곧 배포할 예정입니다. 공개 API 주소가 추후 업데이트될 예정이니 지속적으로 업데이트되는 정보를 확인해 주세요.
 
-Our API is hosted at [API URL]/([API URL]/). 
+## 시작하기
+SWC API는 모든 데이터가 공개되어 있기 때문에 별도의 인증 절차 없이 사용할 수 있습니다.
+모든 엔드포인트는 JSON 형식의 데이터를 GET 방식으로 제공합니다.
 
-You can access the interactive documentation at [[API URL]/docs]([API URL]/docs).
+### 분석
+API의 상태 정보와 리그, 팀, 선수 수 등의 통계를 제공합니다.
 
-You can view the OpenAPI Specification (OAS) file at [[API URL]/openapi.json]([API URL]/openapi.json).
+### 선수
+모든 NFL 선수를 조회하거나, 특정 player_id를 이용해 개별 선수 정보를 검색할 수 있습니다.
 
-## Getting Started
+### 성적
+NFL 선수의 경기 기록 및 판타지 리그 점수 정보를 조회할 수 있습니다.
 
-Since all of the data is public, the SWC API doesn't require any authentication. All of the the following data is available using GET endpoints that return JSON data.
+### 멤버십
+SWC 판타지 풋볼 리그와 각 리그에 속한 팀 정보를 확인할 수 있습니다.
 
-### Analytics
+## 서비스 약관
+API를 사용하는 경우 다음의 약관에 동의한 것으로 간주합니다.
 
-Get information about health of the API and counts of leagues, teams, and players.
+- **이용 제한**: 하루 최대 2,000회까지 요청을 할 수 있으며, 이 제한을 초과하면 API 키가 일시 중단될 수 있습니다.
 
-### Player
-You can get a list of an NFL players, or search for an individual player by player_id.
+- **무보증**: 저희는 API 및 API의  동작에 대해 어떠한 보증도 하지 않습니다.
 
-### Scoring
+## 예시 코드
+상태 확인 엔드포인트에 접근하기 위한 파이썬 예시 코드는 다음과 같습니다.
 
-You can get a list of NFL player performances, including the fantasy points they scored using SWC league scoring.
-
-### Membership
-Get information about all the SWC fantasy football leagues and the teams in them.
-
-## Terms of Service
-
-By using the API, you agree to the following terms of service:
-
-- **Usage Limits**: You are allowed up to 2000 requests per day. Exceeding this limit may result in your API key being suspended.
-- **Data Ownership**: You can use the data however you like as long as you give credit to Sports World Central.
-- **No Warranty**: We don't provide any warranty of the API or its operations.
-
-## Example Code
-
-Here is some Python example code for accessing the health check endpoint:
-
-```
+```python
 import httpx
 
 HEALTH_CHECK_ENDPOINT = "/"
-    
+
 with httpx.Client(base_url=self.swc_base_url) as client:
     response = client.get(self.HEALTH_CHECK_ENDPOINT)
     print(response.json())
 ```
 
-## Software Development Kit (SDK)
-*Coming Soon*
+## 소프트웨어 개발 키트 (SDK)
+*출시 예정*
 
-Check back for the Python SDK for our API.
-
+SWC API를 위한 Python SDK는 추후 제공될 예정입니다. 지속적으로 업데이트되는 정보를 확인해 주세요.
+![image](https://github.com/user-attachments/assets/ed3ab29b-0a34-41f4-9918-85e53d98a0ee)
