@@ -29,7 +29,7 @@ SWC 판타지 풋볼 리그 전체와 각 리그에 속한 팀에 대한 정보�
 #OpenAPI 명세에 추가 세부 정보가 추가된 FastAPI 생성자
 app = FastAPI(
     description=api_description,  
-    title="Sports World Central (SWC) Fantasy Football API",  
+    title="Sports World Central (SWC) 판타지 풋볼 API",  
     version="0.1"  
 )
 
